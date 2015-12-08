@@ -49,6 +49,12 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
+\usepackage{float}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{7pt}
+\linespread{1.2}
+
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
@@ -97,7 +103,7 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{titlepage}
 \begin{center}
-\includegraphics[width=0.3\textwidth]{thu.png}\\[1cm]
+\includegraphics[width=0.3\textwidth]{Figures/thu.png}\\[1cm]
 \textsc{\LARGE \univname}\\[0.8cm] % University name
 \textsc{\LARGE 计算机组成原理}\\[0.8 cm] % Thesis type
 
@@ -163,8 +169,8 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % Uncomment the lines as you write the chapters
 
 \include{Chapters/Chapter1}
-%\include{Chapters/Chapter2} 
-%\include{Chapters/Chapter3}
+\include{Chapters/Chapter2} 
+\include{Chapters/Chapter3}
 %\include{Chapters/Chapter4} 
 %\include{Chapters/Chapter5} 
 
@@ -177,4 +183,4 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 
 %----------------------------------------------------------------------------------------
 
-\end{document}  
+\end{document} 
