@@ -1,0 +1,432 @@
+% Chapter Template
+
+\chapter{实验设计} % Main chapter title
+
+\label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{CPU流水结构}
+
+
+%-----------------------------------
+%	SUBSECTION 1
+%-----------------------------------
+\subsection{整体设计}
+
+
+我们设计并实现了五级流水结构的CPU，对每条指令的处理分为IF、ID、EXE、MEM、WB五个阶段。采用25M时钟，每个时钟周期流水线的每一个阶段完成一条指令的一部分，不同阶段并行完成不同指令的不同部分。同时每两个阶段之间均有一个段间锁存器，用与接收上一阶段的信号并在下一个时钟上升沿到来时传递到下一阶段。
+
+流水线五个阶段的功能与所占用的资源如下：
+
+IF：根据输入的PC值从内存中取出指令。在执行写入命令时，还需要根据PC值向内存中写入用户指令。占用资源：IM、PC、总线
+
+ID：根据IF阶段读取的指令进行译码，从寄存器堆中读出所需寄存器的值。占用资源：寄存器组
+
+EXE：根据ID阶段生成的控制信号、操作数和操作符进行计算，将结果传递到下一阶段。占用资源：ALU
+
+MEM：根据ID阶段生成的控制信号执行写入内存和读取内存的操作，在实现时还需考虑串口的读写与VGA/Keyboard的读写访问。占用资源：DM、总线
+
+WB：根据控制信号执行写回寄存器的操作。占用资源：寄存器组
+
+%-----------------------------------
+%	SUBSECTION 2
+%-----------------------------------
+
+\subsection{数据通路}
+
+我们设计的数据通路见Figure 3.1.
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{Figures/datapath.png}
+  \caption{数据通路.}
+\end{figure}
+
+在数据通路的设计上，我们基本遵循经典的五级流水线结构，但是在其基础之上有了一些变化和改进。
+
+我们将处理数据冲突的模块全部放在了Forward Unit中。既可以将在EXE、MEM的计算结果流回到下一条指令的EXE阶段，同时也可以对访存操作的数据冲突进行插气泡处理。Forward Unit模块还可以处理跳转指令的数据冲突，这样整体结构更加简洁。
+
+我们新增PC模块，同于计算下一周期取指的PC值，根据跳转信号进行计算，可以解决控制冲突。具体实现见冲突处理部分。
+
+%-----------------------------------
+%	SUBSECTION 3
+%-----------------------------------
+
+\subsection{控制信号}
+在ID阶段译码的过程中，会产生很多控制信号，针对我们所需实现的30条指令的指令集，我们设计的控制信号为：
+
+ALUOP：ALU运算器的操作符，包括的类型有 ADD（加法）、SUB（减法）、ASSIGNA（赋操作数A的值）、ASSIGNB（赋操作数B的值）、AND（与）、OR（或）、SLL（逻辑左移）、SRA（算数右移）、EQUAL（判断相等）、LESS（判断小于）、EMPTY（无操作）。
+
+SRCREGA：读取第一个寄存器值的控制使能。1表示IR[10:8]，0表示特殊寄存器。
+
+SRCREGB：读取第二个寄存器值的控制使能。1表示IR[10:8]，0表示IR[7:5]。
+
+REGDST：写回寄存器编号的控制使能。00表示特殊寄存器，01表示IR[10:8]，10表示IR[7:5]，11表示IR[4:2]。
+
+ALUSRCA：ALU运算器第一个操作数的选择信号。00表示Reg[IR[10:8]]，01表示Reg[IR[7:5]]，10表示EPC。
+
+ALUSRCB：ALU运算器第二个操作数的选择信号。1表示reg[IR[7:5]]，0表示extend(imm)。
+
+EXTOP：立即数扩展方式。0表示符号扩展，1表示零扩展。
+
+MEMTOREG：读取内存并写回寄存器使能。
+
+REGWRITE：写回寄存器使能。
+
+MEMWRITE：内存写使能。
+
+BRANCH：B指令跳转信号。00表示无B型跳转，10表示无条件跳转，01表示不等条件跳转，11表示相等条件跳转。
+
+JUMP：J指令跳转使能。
+
+对于每条指令的控制信号，见表3.1—3.5，其中的‘x’表示没有使用。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{Control Signals}
+\label{tab:treatments}
+\begin{tabular}{|>{\centering}p{2.1cm}|*{6}{p{1.4cm}<{\centering}}|}
+\hline
+& ADDIU & ADDIU3 & ADDSP & ADDU & AND & B \\
+\hline
+ALUOP & ADD	& ADD & ADD & ADD & AND & EMPTY\\	
+\hline
+SRCREGA & 1 & 1 & 0 & 1 & 1 & x\\
+\hline
+SRCREGB & x & x & x & 0 & 0 & x\\
+\hline
+REGDST & 01 & 10 & 00 & 11 & 01 & x\\
+\hline
+ALUSRCA & 00 & 00 & 00 & 00 & 00 & x\\
+\hline
+ALUSRCB & 0 & 0 & 0 & 1 & 1 & x\\
+\hline
+EXTOP & 0 & 0 & 0 & x & x & 0\\
+\hline
+MEMTOREG & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+REGWRITE & 1 & 1 & 1 & 1 & 1 & 0\\
+\hline
+MEMWRITE & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+BRANCH & 00 & 00 & 00 & 00 & 00 & 10\\
+\hline
+JUMP & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{Control Signals}
+\label{tab:treatments}
+\begin{tabular}{|>{\centering}p{2.1cm}|*{6}{p{1.4cm}<{\centering}}|}
+\hline
+& BEQZ & BNEZ & BTEQZ & CMP & CMPI & JALR \\
+\hline
+ALUOP & EMPTY & EMPTY & EMPTY & EQUAL & EQUAL & ASSIGNA\\	
+\hline
+SRCREGA & 1 & 1 & 0 & 1 & 1 & 1\\
+\hline
+SRCREGB & x & x & x & 0 & x & x\\
+\hline
+REGDST & x & x & x & 00 & 00 & 00\\
+\hline
+ALUSRCA & x & x & x & 00 & 00 & 10\\
+\hline
+ALUSRCB & x & x & x & 1 & 0 & x\\
+\hline
+EXTOP & 0 & 0 & 0 & x & 0 & x\\
+\hline
+MEMTOREG & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+REGWRITE & 0 & 0 & 0 & 1 & 1 & 1\\
+\hline
+MEMWRITE & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+BRANCH & 11 & 01 & 11 & 00 & 00 & 00\\
+\hline
+JUMP & 0 & 0 & 0 & 0 & 0 & 1\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{Control Signals}
+\label{tab:treatments}
+\begin{tabular}{|>{\centering}p{2.1cm}|*{6}{p{1.4cm}<{\centering}}|}
+\hline
+& JR & JRRA & LI & LW & LW$\_$SP & MFIH \\
+\hline
+ALUOP & EMPTY & EMPTY & ASSIGNB & ADD & ADD & ASSIGNA\\	
+\hline
+SRCREGA & 1 & 0 & x & 1 & 0 & 0\\
+\hline
+SRCREGB & x & x & x & x & x & x\\
+\hline
+REGDST & x & x & 01 & 10 & 01 & 01\\
+\hline
+ALUSRCA & x & x & x & 00 & 00 & 00\\
+\hline
+ALUSRCB & x & x & 0 & 0 & 0 & x\\
+\hline
+EXTOP & x & x & 1 & 0 & 0 & x\\
+\hline
+MEMTOREG & 0 & 0 & 0 & 1 & 1 & 0\\
+\hline
+REGWRITE & 0 & 0 & 1 & 1 & 1 & 1\\
+\hline
+MEMWRITE & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+BRANCH & 00 & 00 & 00 & 00 & 00 & 00\\
+\hline
+JUMP & 1 & 1 & 0 & 0 & 0 & 0\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{Control Signals}
+\label{tab:treatments}
+\begin{tabular}{|>{\centering}p{2.1cm}|*{6}{p{1.4cm}<{\centering}}|}
+\hline
+& MFPC & MOVE & MTIH & MTSP & NOP & OR \\
+\hline
+ALUOP & ASSIGNA & ASSIGNA & ASSIGNA & ASSIGNA & EMPTY & OR\\	
+\hline
+SRCREGA & x & x & 1 & x & x & 1\\
+\hline
+SRCREGB & x & 0 & x & 0 & x & 0\\
+\hline
+REGDST & 01 & 01 & 00 & 00 & x & 01\\
+\hline
+ALUSRCA & 10 & 01 & 00 & 01 & x & 00\\
+\hline
+ALUSRCB & x & x & x & x & x & 1\\
+\hline
+EXTOP & x & x & x & x & x & x\\
+\hline
+MEMTOREG & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+REGWRITE & 1 & 1 & 1 & 1 & 0 & 1\\
+\hline
+MEMWRITE & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+BRANCH & 00 & 00 & 00 & 00 & 00 & 00\\
+\hline
+JUMP & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{Control Signals}
+\label{tab:treatments}
+\begin{tabular}{|>{\centering}p{2.1cm}|*{6}{p{1.4cm}<{\centering}}|}
+\hline
+& SLL & SLTI & SRA & SUBU & SW & SW$\_$SP \\
+\hline
+ALUOP & SLL & LESS & SRA & SUB & ADD & ADD\\	
+\hline
+SRCREGA & x & 1 & x & 1 & 1 & 0\\
+\hline
+SRCREGB & 0 & x & 0 & 0 & 0 & 1\\
+\hline
+REGDST & 01 & 00 & 01 & 11 & x & x\\
+\hline
+ALUSRCA & 01 & 00 & 01 & 00 & 00 & 00\\
+\hline
+ALUSRCB & 0 & 0 & 0 & 1 & 0 & 0\\
+\hline
+EXTOP & 1 & 0 & 1 & x & 0 & 0\\
+\hline
+MEMTOREG & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+REGWRITE & 1 & 1 & 1 & 1 & 0 & 0\\
+\hline
+MEMWRITE & 0 & 0 & 0 & 0 & 1 & 1\\
+\hline
+BRANCH & 00 & 00 & 00 & 00 & 00 & 00\\
+\hline
+JUMP & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+除了以上通过译码器产生的控制信号外，还有FORWARD UNIT产生的冲突处理信号，我们将在下一节详细说明。
+%-----------------------------------
+%	SUBSECTION 4
+%-----------------------------------
+
+\subsection{冲突处理}
+\subsubsection{结构冲突}
+我们采用指令与数据分离存储的方式来避免结构冲突问题。用RAM1和RAM2分别存储数据和指令。但在监控程序功能中有一个 A 指令需要向指令存储器中写入用户指令，这时，我们通过在MEM阶段判断写入地址是否为指令内存地址区间，并产生控制信号IFWE。在IF阶段如果接收到信号IFWE，则将流水线暂停一个周期用来写入指令。
+
+\subsubsection{数据冲突}
+我们在这里仅讨论两种不涉及跳转的数据冲突，两种冲突分别为涉及访存和不涉及访存的冲突。比如：
+
+\textbf{\textit{Example1}}: \quad ADDU R1 R2 R3; \quad SLL R3 R3 0x00
+
+\textbf{\textit{Example2}}: \quad LW R1 R3 0x00; \quad SLL R3 R3 0x00
+
+数据冲突产生原因是前一条指令或者前两条指令需要写回寄存器，而当前的指令又要访问寄存器中的值。这时我们通过增加旁路的方式将之前的计算结果传输到当前的操作数上。
+
+在FORWARD UNIT中，通过判断上一条指令（或上两条指令）的写回寄存器编号与当前目的寄存器编号是否相等来判断是否发生数据冲突。对于涉及访存的数据冲突，我们需要插入气泡等待一个周期，使得上一条指令MEM阶段执行完毕取出内存数之后，再参与下一条指令的运算。FORWARD UNIT产生的控制信号为：
+
+FORWARDA：ALU第一个操作数选择信号。00表示无冲突，使用ID阶段读取的寄存器的值；01表示与上一条指令发生冲突，选择ALU的结果；10表示与上两条指令发生冲突，选择MEM的结果
+
+FORWARDB：ALU第二个操作数选择信号。与FORWARDA类似。
+
+PCSTOP，IFIDSTOP，CONTROLSTOP：插入气泡的控制信号。
+
+\subsubsection{控制冲突}
+
+控制冲突是由于B指令与J指令而产生的。我们将跳转地址的计算放在ID阶段执行。这样，在控制器译码结束后，可以直接计算出跳转后的PC值，故这种做法不需要分支预测，可以提高速度。另外，我们采用打开延迟槽的策略，对跳转指令的后一条指令继续执行。
+
+在实际的冲突中，控制冲突往往与数据冲突结合在一起，比如：
+
+\textbf{\textit{Example3}}: \quad ADDU R1 R2 R3; \quad JR R3;
+
+\textbf{\textit{Example4}}: \quad LW R1 R3 0x00; \quad BEQZ R3 0x10;
+
+在以上的两个例子中，既发生了控制冲突，同时也存在数据冲突。我们同样使用增加旁路的办法，唯一的不同在于旁路的信号需要传送到ID阶段进行计算。FORWARD UNIT模块同样可以产生数据冲突的信号，用于选择跳转所需的寄存器的值。在PC模块中，根据跳转信号与冲突选择信号选取下一条指令的PC值。
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{寄存器堆}
+
+寄存器堆用于存放所有寄存器的值，用于在ID阶段读取寄存器值与WB阶段写回寄存器的值。读寄存器值为组合逻辑，在信号稳定之前读取的值被锁在ID$\_$EXE段间的锁存器中，故不会对后面的结果产生影响。写寄存器值为时序逻辑，必须等待信号稳定后才能写回。由于MEM$\_$WB段间锁存器在上升沿触发，故在下降沿进行写回，此时信号已经稳定。
+
+我们将R0-R7这八个通用寄存器放在寄存器堆中，同时还将SP、RA、IH、T四个系统寄存器也放在寄存器堆中，以方便处理。这样，寄存器的编号需要从三位扩展为四位。各寄存器的编号见表3.6.
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{Register Cluster}
+\label{tab:treatments}
+\begin{tabular}{|p{1.4cm}<{\centering}|p{3cm}<{\centering}|p{1.4cm}<{\centering}|}
+\hline
+符号 & 含义 & 编号 \\
+\hline
+R0 & 通用寄存器 & 0000 \\
+\hline
+R1 & 通用寄存器 & 0001 \\
+\hline
+R2 & 通用寄存器 & 0010 \\
+\hline
+R3 & 通用寄存器 & 0011 \\
+\hline
+R4 & 通用寄存器 & 0100 \\
+\hline
+R5 & 通用寄存器 & 0101 \\
+\hline
+R6 & 通用寄存器 & 0110 \\
+\hline
+R7 & 通用寄存器 & 0111 \\
+\hline
+SP & 栈顶指针寄存器 & 1001 \\
+\hline
+T & T标志寄存器 & 1010 \\
+\hline
+IH & 中断寄存器 & 1011 \\
+\hline 
+RA & 返回值寄存器 & 1100 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{存储器}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{中断处理}
+
+我们实现了四种类型的中断，其中包括两种硬件中断(ESC中断：返回到中断PC；Control C中断：返回到监控程序)，软件中断，时钟中断。下面对这四种中断分别介绍。
+
+\subsection{ESC硬件中断}
+
+ESC硬件中断是通过在用户程序执行时，键盘摁下ESC键产生的中断，在监控程序执行时无效。ESC中断发生时，调用中断处理程序输出中断号，并返回到发生中断的指令继续执行。
+
+这部分硬件中断会复用监控程序的delint中断处理代码，在中断处理程序中需要用到中断时的PC以及中断号，所以需要在发生中断时通过硬件来保存PC与中断号，并跳到中断处理程序。在IF$\_$ID的段间锁存器中加入状态机，来处理ESC中断。状态机见Figure 3.2.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{Figures/escint.png}
+  \caption{ESC硬件中断状态机.}
+\end{figure}
+
+其中箭头上的指令为每个状态机下输出的指令，用来向栈中存储PC值和中断号。保存完毕后，跳到中断处理程序执行，同时状态回到normal。
+
+\subsection{Control C硬件中断}
+
+ESC硬件中断的不足在于对于死循环的用户程序，中断发生后无法跳出死循环，而是继续回到中断发生的位置执行。我们希望仿照真正计算机上的Control C功能，可以实现跳出用户程序的功能。
+
+Control C中断的处理与ESC硬件中断类似，但是不需要再次返回中断时的PC，而是直接跳到监控程序的BEGIN部分即可。所以处理过程比ESC更加简单，只需要在中断发生后将中断号入栈即可，不需要保存PC值。同时需要在监控程序中加入Control C中断的处理。状态机见Figure 3.3.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{Figures/ctrl_c.png}
+  \caption{Control C硬件中断状态机.}
+\end{figure}
+
+\subsection{软件中断}
+
+软件中断的原理与ESC硬件中断一样，通过在控制器译码时产生软件中断的信号，传到IF$\_$ID段间锁存器，同时将软件中断号同时传回，按照ESC的状态机处理软件中断。
+
+\subsection{时钟中断}
+
+时钟中断指计时时钟到一定的时间后，产生中断信号。我们做时钟中断的原因是为了之后的多道程序，多道程序需要分时执行两套监控程序，故需要有分时机制。多道程序的细节在后面讨论，这里仅讨论一下时钟中断的处理。
+
+时钟中断的处理过程与ESC硬件中断基本一致，但是需要注意的一个地方是ESC硬件中断只会发生在用户程序中，这时我们就可以随意使用R6、R7的值(因为用户程序不允许使用)。但是时钟中断可以发生在任何地方，在执行监控程序时也会有时钟中断，所以要首先保存R6的值，才可以执行后续的保存现场的指令。状态机见Figure 3.4.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{Figures/clock.png}
+  \caption{时钟中断状态机.}
+\end{figure}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{I/O}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+\section{多道程序}
+

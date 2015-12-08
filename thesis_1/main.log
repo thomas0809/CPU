@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.9.21)  8 DEC 2015 10:50
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.9.21)  8 DEC 2015 23:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -548,22 +548,7 @@ Package scrlayer-scrpage Info: auto-selection of `pagestyleset=standard'.
 . 
 . Defining environment 'acknowledgements' with sig. '' on line 387.
 .................................................
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks19
-\inpenc@posthook=\toks20
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/ctex.sty
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/ctex.sty
 Package: ctex 2015/07/01 v2.2 Chinese adapter in LaTeX (CTEX)
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/ctexhook.sty
@@ -872,9 +857,6 @@ File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
 other characters in Unicode lower plane
 
-*** you should *not* be loading the inputenc package
-*** XeTeX expects the source to be in UTF8 encoding
-*** some features of other encodings may conflict, resulting in poor output.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3enc.def
 File: t3enc.def 2001/12/31 T3 encoding
 LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
@@ -884,8 +866,8 @@ LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
 File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
 \tipaTiiicode=\count160
-\tipasavetokens=\toks21
-\tipachecktokens=\toks22
+\tipasavetokens=\toks19
+\tipachecktokens=\toks20
 )
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -1238,7 +1220,7 @@ Package: xeCJKfntef 2015/05/15 v3.3.2 xeCJK font effect
 \UL@box=\box56
 \UL@hyphenbox=\box57
 \UL@skip=\skip65
-\UL@hook=\toks23
+\UL@hook=\toks21
 \UL@height=\dimen209
 \UL@pe=\count162
 \UL@pixel=\dimen210
@@ -1252,7 +1234,7 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (/usr/local/texlive/2015/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\@envbody=\toks24
+\@envbody=\toks22
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty
 Package: CJKfntef 2015/04/18 4.8.4
@@ -1506,6 +1488,26 @@ File: ctex-fontset-mac.def 2015/07/01 v2.2 Mac OS X fonts definition (CTEX)
 )) (/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2015/07/01 v2.2 Configuration file (CTEX)
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks23
+\inpenc@posthook=\toks24
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 105.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/palatino.sty
 Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
@@ -1855,6 +1857,59 @@ File: csquotes.cfg
 )
 Package csquotes Info: Enabling multilingual quotes.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count330
+\float@exts=\toks26
+\float@box=\box65
+\@float@everytoks=\toks27
+\@floatcapt=\box66
+)
+Package scrhack Info: loading float hack on input line 53.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/koma-script/float.hak
+File: float.hak 2015/05/06 v3.17a KOMA-Script package (hacking package float)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2015/05/06 v3.17a KOMA-Script package (handling toc-files)
+)
+Package scrhack Info: redefining \newfloat on input line 161.
+Package scrhack Info: redefining \listof on input line 161.
+Package scrhack Info: undefining \float@addtolists on input line 161.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box67
+\sift@deathcycles=\count331
+\@vwid@loff=\dimen221
+\@vwid@roff=\dimen222
+)
+\c@taburow=\count332
+\tabu@nbcols=\count333
+\tabu@cnt=\count334
+\tabu@Xcol=\count335
+\tabu@alloc=\count336
+\tabu@nested=\count337
+\tabu@target=\dimen223
+\tabu@spreadtarget=\dimen224
+\tabu@naturalX=\dimen225
+\tabucolX=\dimen226
+\tabu@Xsum=\dimen227
+\extrarowdepth=\dimen228
+\abovetabulinesep=\dimen229
+\belowtabulinesep=\dimen230
+\tabustrutrule=\dimen231
+\tabu@thebody=\toks28
+\tabu@footnotes=\toks29
+\tabu@box=\box68
+\tabu@arstrutbox=\box69
+\tabu@hleads=\box70
+\tabu@vleads=\box71
+\tabu@cellskip=\skip80
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
@@ -1867,44 +1922,57 @@ File: english.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
-(./main.aux (./Chapters/Chapter1.aux))
+(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
+(./Chapters/Chapter3.aux
+
+LaTeX Warning: Label `tab:treatments' multiply defined.
+
+
+LaTeX Warning: Label `tab:treatments' multiply defined.
+
+
+LaTeX Warning: Label `tab:treatments' multiply defined.
+
+
+LaTeX Warning: Label `tab:treatments' multiply defined.
+
+
+LaTeX Warning: Label `tab:treatments' multiply defined.
+
+))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 91.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 91.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 96.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 96.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Try loading font information for EU1+ppl on input line 91.
-LaTeX Font Info:    No file EU1ppl.fd. on input line 91.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 96.
 
-
-LaTeX Font Warning: Font shape `EU1/ppl/m/n' undefined
-(Font)              using `EU1/lmr/m/n' instead on input line 91.
-
-
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ppl.fd
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1913,6 +1981,7 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2015/01/21 v2.6e siunitx: Abbreviated units
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
@@ -1923,18 +1992,17 @@ Package caption Info: End \AtBeginDocument code.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* bindingoffset: 56.9055pt
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(71.13188pt, 361.34995pt, 108.12054pt)
-* v-part:(T,H,B)=(42.67912pt, 759.6886pt, 42.67912pt)
+* h-part:(L,W,R)=(99.58464pt, 398.3386pt, 99.58464pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=361.34995pt
-* \textheight=693.47404pt
-* \oddsidemargin=55.7674pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-29.59087pt
-* \headheight=18.8778pt
+* \textwidth=398.3386pt
+* \textheight=665.04106pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=27.31465pt
+* \topmargin=-15.36449pt
+* \headheight=18.85803pt
 * \headsep=19.8738pt
 * \topskip=11.0pt
 * \footskip=27.46295pt
@@ -1952,16 +2020,16 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 91.
-Package scrbase Info: activating english \authorshipname on input line 91.
-Package scrbase Info: activating english \byname on input line 91.
-Package scrbase Info: activating english \abbrevname on input line 91.
-Package scrbase Info: activating english \constantsname on input line 91.
-Package scrbase Info: activating english \symbolsname on input line 91.
-Package scrbase Info: activating english \acknowledgementname on input line 91.
+(scrlayer)             \begin{document} on input line 96.
+Package scrbase Info: activating english \authorshipname on input line 96.
+Package scrbase Info: activating english \byname on input line 96.
+Package scrbase Info: activating english \abbrevname on input line 96.
+Package scrbase Info: activating english \constantsname on input line 96.
+Package scrbase Info: activating english \symbolsname on input line 96.
+Package scrbase Info: activating english \acknowledgementname on input line 96.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 91.
+LaTeX Info: Redefining \selectfont on input line 96.
 
 *** you should *not* be loading the inputenc package
 *** XeTeX expects the source to be in UTF8 encoding
@@ -1973,57 +2041,57 @@ LaTeX Info: Redefining \selectfont on input line 91.
 .................................................
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 91.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 91.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 91.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 91.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 91.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 91.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 91.
-LaTeX Font Info:    Redeclaring math accent \check on input line 91.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 91.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 91.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 91.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 91.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 96.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 96.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 96.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 96.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 96.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 96.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 96.
+LaTeX Font Info:    Redeclaring math accent \check on input line 96.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 96.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 96.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 96.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 96.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 91.
+(Font)              `operators' in the math version `normal' on input line 96.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> EU1/ppl/m/n on input line 91.
+(Font)                  OT1/cmr/m/n --> EU1/ppl/m/n on input line 96.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 91.
+(Font)              `operators' in the math version `bold' on input line 96.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> EU1/ppl/m/n on input line 91.
+(Font)                  OT1/cmr/bx/n --> EU1/ppl/m/n on input line 96.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  EU1/ppl/m/n --> EU1/ppl/m/n on input line 91.
+(Font)                  EU1/ppl/m/n --> EU1/ppl/m/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> EU1/ppl/m/it on input line 91.
+(Font)                  OT1/cmr/m/it --> EU1/ppl/m/it on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> EU1/ppl/bx/n on input line 91.
+(Font)                  OT1/cmr/bx/n --> EU1/ppl/bx/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/phv/m/n on input line 91.
+(Font)                  OT1/cmss/m/n --> EU1/phv/m/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/pcr/m/n on input line 91.
+(Font)                  OT1/cmtt/m/n --> EU1/pcr/m/n on input line 96.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  EU1/ppl/m/n --> EU1/ppl/bx/n on input line 91.
+(Font)                  EU1/ppl/m/n --> EU1/ppl/bx/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> EU1/ppl/bx/it on input line 91.
+(Font)                  OT1/cmr/bx/it --> EU1/ppl/bx/it on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/phv/bx/n on input line 91.
+(Font)                  OT1/cmss/bx/n --> EU1/phv/bx/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/pcr/bx/n on input line 91.
+(Font)                  OT1/cmtt/m/n --> EU1/pcr/bx/n on input line 96.
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -2035,12 +2103,12 @@ Package biblatex Warning: Data encoding is 'utf8'.
 \openout3 = `main-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' not found.
-No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 91.
-Package biblatex Info: Reference segment=0 on input line 91.
-\AtBeginShipoutBox=\box65
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package biblatex Info: ... file 'main.bbl' found.
+(./main.bbl)
+Package biblatex Info: Reference section=0 on input line 96.
+Package biblatex Info: Reference segment=0 on input line 96.
+\AtBeginShipoutBox=\box72
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 LaTeX Info: Redefining \color on input line 81.
 
@@ -2049,7 +2117,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: xetex.def on input line 142.
 )
-Package hyperref Info: Link coloring ON on input line 91.
+Package hyperref Info: Link coloring ON on input line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -2057,58 +2125,54 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count330
+\c@section@level=\count338
 )
-LaTeX Info: Redefining \ref on input line 91.
-LaTeX Info: Redefining \pageref on input line 91.
-LaTeX Info: Redefining \nameref on input line 91.
+LaTeX Info: Redefining \ref on input line 96.
+LaTeX Info: Redefining \pageref on input line 96.
+LaTeX Info: Redefining \nameref on input line 96.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-\c__siunitx_mathsf_int=\count331
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 91.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 91.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 91.
-LaTeX Font Info:    Try loading font information for EU1+phv on input line 91.
-LaTeX Font Info:    No file EU1phv.fd. on input line 91.
+\c__siunitx_mathsf_int=\count339
+LaTeX Font Info:    Try loading font information for EU1+ppl on input line 96.
+LaTeX Font Info:    No file EU1ppl.fd. on input line 96.
 
+
+LaTeX Font Warning: Font shape `EU1/ppl/m/n' undefined
+(Font)              using `EU1/lmr/m/n' instead on input line 96.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 96.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 96.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 96.
+LaTeX Font Info:    Try loading font information for EU1+phv on input line 96.
+LaTeX Font Info:    No file EU1phv.fd. on input line 96.
 
 LaTeX Font Warning: Font shape `EU1/phv/m/n' undefined
-(Font)              using `EU1/lmr/m/n' instead on input line 91.
+(Font)              using `EU1/lmr/m/n' instead on input line 96.
 
-\c__siunitx_mathtt_int=\count332
-LaTeX Font Info:    Try loading font information for EU1+pcr on input line 91.
-LaTeX Font Info:    No file EU1pcr.fd. on input line 91.
+\c__siunitx_mathtt_int=\count340
+LaTeX Font Info:    Try loading font information for EU1+pcr on input line 96.
+LaTeX Font Info:    No file EU1pcr.fd. on input line 96.
 
 LaTeX Font Warning: Font shape `EU1/pcr/m/n' undefined
-(Font)              using `EU1/lmr/m/n' instead on input line 91.
+(Font)              using `EU1/lmr/m/n' instead on input line 96.
 
 1: section
-File: thu.png Graphic file (type QTm)
-<use  "thu.png" >
-
-LaTeX Font Warning: Font shape `EU1/ppl/m/sc' undefined
-(Font)              using `EU1/ppl/m/n' instead on input line 104.
-
+File: Figures/thu.png Graphic file (type QTm)
+<use  "Figures/thu.png" >
 
 LaTeX Font Warning: Font shape `EU1/STSong(0)/m/sc' undefined
-(Font)              using `EU1/STSong(0)/m/n' instead on input line 104.
+(Font)              using `EU1/STSong(0)/m/n' instead on input line 109.
 
-
-LaTeX Font Warning: Font shape `EU1/ppl/bx/n' undefined
-(Font)              using `EU1/ppl/m/n' instead on input line 108.
-
-
-LaTeX Font Warning: Font shape `EU1/ppl/m/it' undefined
-(Font)              using `EU1/ppl/m/n' instead on input line 109.
-
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 113.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 117.
+(Font)              <12> on input line 122.
 [1
 
 
@@ -2117,20 +2181,129 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 --------------------
  Abstract
 --------------------
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 144.
 1: section
-
-LaTeX Font Warning: Font shape `EU1/ppl/m/sl' undefined
-(Font)              using `EU1/ppl/m/n' instead on input line 150.
-
 [1
 
-] (./main.toc
+]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 155.
+ (./main.toc
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 4.
+
+1: section
+[2
+
+])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [3]
+1: section
+\openout2 = `Chapters/Chapter1.aux'.
+
+(./Chapters/Chapter1.tex
+Chapter 1.
+)
+1: section
+[1
+
+
+
+]
+\openout2 = `Chapters/Chapter2.aux'.
+
+ (./Chapters/Chapter2.tex
+Chapter 2.
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 11.
+)
+Overfull \hbox (13.85739pt too wide) in paragraph at lines 35--174
+\T1/ppl/m/n/10.95 Donec pel-len-tesque justo a massa fringilla non vestibu-lum 
+me-tus vestibu-lum. Vestibu-
+ []
+
+1: section
+[2
+
+
+
+]
+LaTeX Font Info:    Font shape `EU1/STSong(0)/m/sl' in size <10.95> not availab
+le
+(Font)              Font shape `EU1/STSong(0)/m/it' tried instead on input line
+ 174.
+ [3]
+\openout2 = `Chapters/Chapter3.aux'.
+
+ (./Chapters/Chapter3.tex
+Chapter 3.
+File: Figures/datapath.png Graphic file (type QTm)
+<use  "Figures/datapath.png" >
+1: section
+[4
+
+
+
+] [5]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 91.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 91.
+
+Overfull \hbox (5.53587pt too wide) in paragraph at lines 134--135
+ []|\T1/ppl/m/n/10 ASSIGNA| 
+ []
+
+[6]
+Overfull \hbox (3.86597pt too wide) in paragraph at lines 173--173
+ []|\T1/ppl/m/n/10 ASSIGNB| 
+ []
+
+
+Overfull \hbox (5.53587pt too wide) in paragraph at lines 173--174
+ []|\T1/ppl/m/n/10 ASSIGNA| 
+ []
+
+
+Overfull \hbox (5.53587pt too wide) in paragraph at lines 212--212
+ []|\T1/ppl/m/n/10 ASSIGNA| 
+ []
+
+
+Overfull \hbox (5.53587pt too wide) in paragraph at lines 212--212
+ []|\T1/ppl/m/n/10 ASSIGNA| 
+ []
+
+
+Overfull \hbox (5.53587pt too wide) in paragraph at lines 212--212
+ []|\T1/ppl/m/n/10 ASSIGNA| 
+ []
+
+
+Overfull \hbox (5.53587pt too wide) in paragraph at lines 212--212
+ []|\T1/ppl/m/n/10 ASSIGNA| 
+ []
+
+[7] [8]
+LaTeX Font Info:    Font shape `T1/ppl/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/ppl/b/it' tried instead on input line 291.
+ [9] [10]
+File: Figures/escint.png Graphic file (type QTm)
+ <use  "Figures/escint.png" >
+File: Figures/ctrl_c.png Graphic file (type QTm)
+ <use  "Figures/ctrl_c.png" >
+[11]
+File: Figures/clock.png Graphic file (type QTm)
+ <use  "Figures/clock.png" >) [12] [13]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
 * Font 'STFangsong' does not contain script 'CJK'.
 *************************************************
-\g__fontspec_family_STFangsong_int=\count333
+\g__fontspec_family_STFangsong_int=\count341
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -2146,6 +2319,10 @@ LaTeX Font Warning: Font shape `EU1/ppl/m/sl' undefined
 . 
 . Could not resolve font STFangsong/I (it probably doesn't exist).
 .................................................
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 184.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -2171,154 +2348,40 @@ LaTeX Font Warning: Font shape `EU1/ppl/m/sl' undefined
 . 
 .................................................
 
-LaTeX Font Warning: Font shape `EU1/pcr/bx/n' undefined
-(Font)              using `EU1/pcr/m/n' instead on input line 17.
+Overfull \hbox (0.44162pt too wide) in paragraph at lines 184--184
+[][]\T1/ppl/m/n/10.95 Wieman, Carl E. and Leo Holl-berg (1991). ^^P  Us-ing Dio
+de Lasers for Atomic Physics ^^Q.
+ []
 
-)
-\tf@toc=\write5
-\openout5 = `main.toc'.
-
-
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
 1: section
-[2
+[14
+
 
 ]
-1: section
-\openout2 = `Chapters/Chapter1.aux'.
-
-(./Chapters/Chapter1.tex
-Chapter 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 27.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 27.
-1: section
-[1
-
-
-
-] [2]
-Overfull \hbox (18.61507pt too wide) in paragraph at lines 78--79
-[]\EU1/pcr/bx/n/10.95 Sunil’s template was made available through [][]$[][][][]
- [] [] [] [][][] [] [][][][][][][][][][][][][][] []
- []
-
-[3] [4]
-Overfull \hbox (4.56601pt too wide) in paragraph at lines 162--163
-[]\EU1/pcr/bx/n/10.95 The list of symbols is split into the Roman and Greek alp
-habets. Whereas
- []
-
-[5]
-
-LaTeX Font Warning: Font shape `EU1/pcr/m/it' undefined
-(Font)              using `EU1/pcr/m/n' instead on input line 168.
-
-
-LaTeX Warning: Citation 'Reference1' on page 6 undefined on input line 194.
-
-
-LaTeX Warning: Citation 'Reference2' on page 6 undefined on input line 194.
-
-
-LaTeX Warning: Citation 'Reference1' on page 6 undefined on input line 194.
-
-
-LaTeX Warning: Citation 'Reference3' on page 6 undefined on input line 194.
-
-[6]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 196.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 196.
- [7]
-File: Figures/Electron.pdf Graphic file (type QTm)
- <use  "Figures/Electron.pdf" >
-Overfull \hbox (36.98767pt too wide) in paragraph at lines 262--264
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8]
-Overfull \hbox (15.94305pt too wide) in paragraph at lines 272--273
-[]\EU1/pcr/m/it/10.95 The []\decoRule command is optional and simply puts an ae
-sthetic horizontal
- []
-
-
-Overfull \hbox (10.07387pt too wide) in paragraph at lines 280--282
-\EU1/pcr/m/it/10.95 tell you everything you need to know for most cases of type
-setting mathematics.
- []
-
-
-Overfull \hbox (15.62383pt too wide) in paragraph at lines 280--282
-\EU1/pcr/m/it/10.95 downloaded from: [][]$[][][] [] [] [] [][][] [] [][][] [] [
-][][] [] [][][] [] [][][] [] [][][] [] [][][][][][][] [] [][][][][][][][][][][]
-[][][][][][][] []
- []
-
-[9]
-Overfull \hbox (21.5407pt too wide) in paragraph at lines 308--309
-[]\EU1/pcr/m/it/10.95 You should break your thesis up into nice, bite-sized sec
-tions and subsections.
- []
-
-
-Overfull \hbox (8.41888pt too wide) in paragraph at lines 308--309
-\EU1/pcr/m/it/10.95 L[]T[]X automatically builds a table of Contents by looking
- at all the []\chapter{},
- []
-
-
-Overfull \hbox (1.79448pt too wide) in paragraph at lines 310--311
-[]\EU1/pcr/m/it/10.95 chapter{} is level zero (0). A []\section{} is level one 
-(1) and so a []\subsection{}
- []
-
-
-Overfull \hbox (16.5125pt too wide) in paragraph at lines 310--311
-\EU1/pcr/m/it/10.95 is level two (2). In your thesis it is likely that you will
- even use a []subsubsection{},
- []
-
-) [10]
-
-LaTeX Warning: Empty bibliography on input line 179.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
-(./main.aux (./Chapters/Chapter1.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 183.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 183.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
+ (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
+(./Chapters/Chapter3.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 188.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 188.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
+LaTeX Warning: There were multiply-defined labels.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39241 strings out of 493706
- 843402 string characters out of 6145769
- 951458 words of memory out of 5000000
- 42185 multiletter control sequences out of 15000+600000
- 10552 words of font info for 60 fonts, out of 8000000 for 9000
+ 40386 strings out of 493706
+ 864784 string characters out of 6145769
+ 987250 words of memory out of 5000000
+ 43284 multiletter control sequences out of 15000+600000
+ 34067 words of font info for 76 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 63i,20n,84p,10377b,2033s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,20n,91p,10377b,2249s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (13 pages).
+Output written on main.pdf (18 pages).

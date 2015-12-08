@@ -36,12 +36,12 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 headsepline, % Uncomment to get a line under the header
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
-\usepackage[utf8]{inputenc} % Required for inputting international characters
-
-\usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage[UTF8, heading = false, scheme = plain]{ctex}
 
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{palatino} % Use the Palatino font by default
+
 
 \usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
 
@@ -49,8 +49,13 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
+\usepackage{float}
+\usepackage{tabu}
+
 \usepackage{indentfirst}
 \setlength{\parindent}{2em}
+\setlength{\parskip}{7pt}
+\linespread{1.2}
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -58,11 +63,11 @@ headsepline, % Uncomment to get a line under the header
 
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
-	inner=2.5cm, % Inner margin
-	outer=3.8cm, % Outer margin
-	bindingoffset=2cm, % Binding offset
-	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
+	inner=3.5cm, % Inner margin
+	outer=3.5cm, % Outer margin
+	%bindingoffset=2cm, % Binding offset
+	top=2cm, % Top margin
+	bottom=2cm, % Bottom margin
 	%showframe,% show how the type block is set on the page
 }
 
@@ -100,14 +105,14 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{titlepage}
 \begin{center}
-\includegraphics[width=0.3\textwidth]{thu.png}\\[1cm]
+\includegraphics[width=0.3\textwidth]{Figures/thu.png}\\[1cm]
 \textsc{\LARGE \univname}\\[0.8cm] % University name
-\textsc{\LARGE 计算机组成原理}\\[0.8 cm] % Thesis type
+\textsc{\LARGE 计算机组成原理}\\[0.5 cm] % Thesis type
 
 \HRule \\[0.4cm] % Horizontal line
 {\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
 \large \textit{支持THCO MIPS指令系统的流水线计算机设计与实现}\\[0.3cm] % University requirement text
-\HRule \\[2cm] % Horizontal line
+\HRule \\[1.5cm] % Horizontal line
  
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
@@ -120,12 +125,12 @@ headsepline, % Uncomment to get a line under the header
 \emph{指导教师：} \\[0.4cm]
 \supname % Supervisor name - remove the \href bracket to remove the link  
 \end{flushright}
-\end{minipage}\\[5cm]
+\end{minipage}\\[4cm]
 
 %\textit{in the}\\[0.4cm]
-\univname\\[0.5cm]\deptname\\[2cm] % Research group name and department name
+\univname\\[0.1cm]\deptname\\[2cm] % Research group name and department name
  
-{\large \today}\\[4cm] % Date
+{\large \today}\\[3cm] % Date
 %\includegraphics{Logo} % University/department logo - uncomment to place it
  
 \vfill
@@ -166,8 +171,8 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % Uncomment the lines as you write the chapters
 
 \include{Chapters/Chapter1}
-%\include{Chapters/Chapter2} 
-%\include{Chapters/Chapter3}
+\include{Chapters/Chapter2} 
+\include{Chapters/Chapter3}
 %\include{Chapters/Chapter4} 
 %\include{Chapters/Chapter5} 
 
@@ -180,4 +185,4 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 
 %----------------------------------------------------------------------------------------
 
-\end{document}  
+\end{document} 
