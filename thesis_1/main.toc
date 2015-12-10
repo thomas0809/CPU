@@ -1,7 +1,7 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
 \select@language {english}
-\contentsline {chapter}{Abstract}{i}{section*.1}
+\contentsline {chapter}{摘要}{i}{section*.1}
 \contentsline {chapter}{\numberline {1}实验目的}{1}{chapter.3}
 \contentsline {chapter}{\numberline {2}实验环境}{2}{chapter.4}
 \contentsline {section}{\numberline {2.1}硬件环境}{2}{section.5}
@@ -37,22 +37,27 @@
 \contentsline {subsection}{\numberline {3.5.2}键盘输入}{17}{subsection.48}
 \contentsline {subsection}{\numberline {3.5.3}汇编码转为机器码}{19}{subsection.51}
 \contentsline {subsection}{\numberline {3.5.4}VGA输出}{19}{subsection.52}
-\contentsline {subsection}{\numberline {3.5.5}机器码转为汇编码}{19}{subsection.53}
-\contentsline {section}{\numberline {3.6}多道程序}{19}{section.54}
-\contentsline {chapter}{\numberline {4}模块划分与接口设计}{21}{chapter.56}
-\contentsline {section}{\numberline {4.1}IFetch}{21}{section.57}
-\contentsline {section}{\numberline {4.2}IF$\_$ID$\_$REGISTER}{21}{section.59}
-\contentsline {section}{\numberline {4.3}controller}{22}{section.61}
-\contentsline {section}{\numberline {4.4}RegisterCluster}{23}{section.63}
-\contentsline {section}{\numberline {4.5}PC}{23}{section.65}
-\contentsline {section}{\numberline {4.6}ID$\_$EX$\_$REGISTER}{24}{section.67}
-\contentsline {section}{\numberline {4.7}ALU}{26}{section.69}
-\contentsline {section}{\numberline {4.8}EX$\_$MEM$\_$REGISTER}{26}{section.71}
-\contentsline {section}{\numberline {4.9}MEM}{27}{section.73}
-\contentsline {section}{\numberline {4.10}MEM$\_$WB$\_$REGISTER}{28}{section.75}
-\contentsline {section}{\numberline {4.11}FORFARD UNIT}{29}{section.77}
-\contentsline {section}{\numberline {4.12}keyboard}{30}{section.79}
-\contentsline {section}{\numberline {4.13}keyboardCpuRam}{31}{section.81}
-\contentsline {section}{\numberline {4.14}keyboardstatemachine}{31}{section.83}
-\contentsline {section}{\numberline {4.15}compiler}{32}{section.85}
-\contentsline {chapter}{Bibliography}{33}{chapter*.87}
+\contentsline {subsection}{\numberline {3.5.5}屏幕保护界面}{20}{subsection.53}
+\contentsline {subsection}{\numberline {3.5.6}机器码转为汇编码}{20}{subsection.54}
+\contentsline {section}{\numberline {3.6}多道程序}{20}{section.55}
+\contentsline {chapter}{\numberline {4}模块划分与接口设计}{22}{chapter.57}
+\contentsline {section}{\numberline {4.1}IFetch}{22}{section.58}
+\contentsline {section}{\numberline {4.2}IF$\_$ID$\_$REGISTER}{23}{section.60}
+\contentsline {section}{\numberline {4.3}Controller}{23}{section.62}
+\contentsline {section}{\numberline {4.4}RegisterCluster}{24}{section.64}
+\contentsline {section}{\numberline {4.5}PC}{24}{section.66}
+\contentsline {section}{\numberline {4.6}ID$\_$EX$\_$REGISTER}{25}{section.68}
+\contentsline {section}{\numberline {4.7}ALU}{26}{section.70}
+\contentsline {section}{\numberline {4.8}EX$\_$MEM$\_$REGISTER}{27}{section.72}
+\contentsline {section}{\numberline {4.9}MEM}{28}{section.74}
+\contentsline {section}{\numberline {4.10}MEM$\_$WB$\_$REGISTER}{29}{section.76}
+\contentsline {section}{\numberline {4.11}FORFARD\_UNIT}{29}{section.78}
+\contentsline {section}{\numberline {4.12}Keyboard}{30}{section.80}
+\contentsline {section}{\numberline {4.13}KeyboardCpuRam}{30}{section.82}
+\contentsline {section}{\numberline {4.14}KeyboardStateMachine}{31}{section.84}
+\contentsline {section}{\numberline {4.15}Compiler}{32}{section.86}
+\contentsline {section}{\numberline {4.16}VGA\_Controller}{32}{section.88}
+\contentsline {section}{\numberline {4.17}VGA}{33}{section.90}
+\contentsline {section}{\numberline {4.18}VGA\_Core\_Ball}{33}{section.92}
+\contentsline {section}{\numberline {4.19}Output\_Adaptor}{34}{section.94}
+\contentsline {chapter}{Bibliography}{35}{chapter*.96}

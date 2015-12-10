@@ -298,7 +298,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\begin{center}
 	%{\normalsize \MakeUppercase{\univname} \par} % University name in capitals
 	\bigskip
-	{\huge\textit{\abstractname} \par}
+	{\Huge\textit{\abstractname} \par}
 	\bigskip
 	%{\normalsize \facname \par} % Faculty name
 	%{\normalsize \deptname \par} % Department name
