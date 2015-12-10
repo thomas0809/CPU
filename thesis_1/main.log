@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.29)  9 DEC 2015 16:39
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.29)  10 DEC 2015 10:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1861,38 +1861,8 @@ Package scrhack Info: redefining \newfloat on input line 161.
 Package scrhack Info: redefining \listof on input line 161.
 Package scrhack Info: undefining \float@addtolists on input line 161.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box67
-\sift@deathcycles=\count331
-\@vwid@loff=\dimen221
-\@vwid@roff=\dimen222
-)
-\c@taburow=\count332
-\tabu@nbcols=\count333
-\tabu@cnt=\count334
-\tabu@Xcol=\count335
-\tabu@alloc=\count336
-\tabu@nested=\count337
-\tabu@target=\dimen223
-\tabu@spreadtarget=\dimen224
-\tabu@naturalX=\dimen225
-\tabucolX=\dimen226
-\tabu@Xsum=\dimen227
-\extrarowdepth=\dimen228
-\abovetabulinesep=\dimen229
-\belowtabulinesep=\dimen230
-\tabustrutrule=\dimen231
-\tabu@thebody=\toks28
-\tabu@footnotes=\toks29
-\tabu@box=\box68
-\tabu@arstrutbox=\box69
-\tabu@hleads=\box70
-\tabu@vleads=\box71
-\tabu@cellskip=\skip80
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen221
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
@@ -1906,24 +1876,7 @@ File: english.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
-(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
-(./Chapters/Chapter3.aux
-
-LaTeX Warning: Label `tab:treatments' multiply defined.
-
-
-LaTeX Warning: Label `tab:treatments' multiply defined.
-
-
-LaTeX Warning: Label `tab:treatments' multiply defined.
-
-
-LaTeX Warning: Label `tab:treatments' multiply defined.
-
-
-LaTeX Warning: Label `tab:treatments' multiply defined.
-
-))
+No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
@@ -1944,7 +1897,7 @@ LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 96.
 LaTeX Font Info:    ... okay on input line 96.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 96.
 LaTeX Font Info:    Try loading font information for T3+cmr on input line 96.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
 LaTeX Font Info:    ... okay on input line 96.
@@ -2091,7 +2044,7 @@ Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 96.
 Package biblatex Info: Reference segment=0 on input line 96.
-\AtBeginShipoutBox=\box72
+\AtBeginShipoutBox=\box67
  (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 LaTeX Info: Redefining \color on input line 81.
@@ -2109,20 +2062,21 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count338
+\c@section@level=\count331
 )
 LaTeX Info: Redefining \ref on input line 96.
 LaTeX Info: Redefining \pageref on input line 96.
 LaTeX Info: Redefining \nameref on input line 96.
-
-(./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-\c__siunitx_mathsf_int=\count339
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+\c__siunitx_mathsf_int=\count332
 LaTeX Font Info:    Try loading font information for EU1+ppl on input line 96.
 LaTeX Font Info:    No file EU1ppl.fd. on input line 96.
-
 
 LaTeX Font Warning: Font shape `EU1/ppl/m/n' undefined
 (Font)              using `EU1/lmr/m/n' instead on input line 96.
@@ -2139,7 +2093,7 @@ LaTeX Font Info:    No file EU1phv.fd. on input line 96.
 LaTeX Font Warning: Font shape `EU1/phv/m/n' undefined
 (Font)              using `EU1/lmr/m/n' instead on input line 96.
 
-\c__siunitx_mathtt_int=\count340
+\c__siunitx_mathtt_int=\count333
 LaTeX Font Info:    Try loading font information for EU1+pcr on input line 96.
 LaTeX Font Info:    No file EU1pcr.fd. on input line 96.
 
@@ -2174,18 +2128,14 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 155.
- (./main.toc
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 4.
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
 
 1: section
 [2
 
-])
-\tf@toc=\write5
-\openout5 = `main.toc'.
-
- [3]
+]
 1: section
 \openout2 = `Chapters/Chapter1.aux'.
 
@@ -2204,11 +2154,12 @@ Chapter 1.
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 11.
-)
-Overfull \hbox (13.85739pt too wide) in paragraph at lines 35--174
-\T1/ppl/m/n/10.95 Donec pel-len-tesque justo a massa fringilla non vestibu-lum 
-me-tus vestibu-lum. Vestibu-
- []
+File: Figures/THINPAD.png Graphic file (type QTm)
+<use  "Figures/THINPAD.png" >
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 26.
 
 1: section
 [2
@@ -2216,11 +2167,18 @@ me-tus vestibu-lum. Vestibu-
 
 
 ]
+Overfull \hbox (7.5856pt too wide) in paragraph at lines 49--50
+\EU1/FandolSong-Regular(0)/m/n/10.95 为 主 要 存 储 器，|  采 用 的 是 \T1/ppl/m/n/10.95 I
+SSI \EU1/FandolSong-Regular(0)/m/n/10.95 公 司 生 产 的 异 步 高 速 \T1/ppl/m/n/10.95 CM
+OS SRAM\EU1/FandolSong-Regular(0)/m/n/10.95 ，|  型 号 为 \T1/ppl/m/n/10.95 IS61LV2
+5616-
+ []
+
 LaTeX Font Info:    Font shape `EU1/FandolSong-Regular(0)/m/sl' in size <10.95>
  not available
 (Font)              Font shape `EU1/FandolSong-Regular(0)/m/it' tried instead o
-n input line 174.
- [3]
+n input line 77.
+[3]) [4]
 \openout2 = `Chapters/Chapter3.aux'.
 
  (./Chapters/Chapter3.tex
@@ -2228,21 +2186,19 @@ Chapter 3.
 File: Figures/datapath.png Graphic file (type QTm)
 <use  "Figures/datapath.png" >
 1: section
-[4
+[5
 
 
 
-] [5]
+] [6]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 91.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 91.
 
 Overfull \hbox (5.53587pt too wide) in paragraph at lines 134--135
  []|\T1/ppl/m/n/10 ASSIGNA| 
  []
 
-[6]
+[7]
 Overfull \hbox (3.86597pt too wide) in paragraph at lines 173--173
  []|\T1/ppl/m/n/10 ASSIGNB| 
  []
@@ -2272,23 +2228,154 @@ Overfull \hbox (5.53587pt too wide) in paragraph at lines 212--212
  []|\T1/ppl/m/n/10 ASSIGNA| 
  []
 
-[7] [8]
+[8]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 285.
+ [9]
 LaTeX Font Info:    Font shape `T1/ppl/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/ppl/b/it' tried instead on input line 291.
- [9] [10]
+ [10] [11]
+File: Figures/SRAM.jpg Graphic file (type QTm)
+ <use  "Figures/SRAM.jpg" > [12] [13]
 File: Figures/escint.png Graphic file (type QTm)
- <use  "Figures/escint.png" >
+
+<use  "Figures/escint.png" > [14]
 File: Figures/ctrl_c.png Graphic file (type QTm)
- <use  "Figures/ctrl_c.png" >
-[11]
+ <use  "Figures/ctrl_c.png" > [15]
 File: Figures/clock.png Graphic file (type QTm)
- <use  "Figures/clock.png" >) [12] [13]
+
+<use  "Figures/clock.png" > [16]
+File: Figures/keyboard_main.png Graphic file (type QTm)
+ <use  "Figures/keyboard_main.png" >
+Overfull \hbox (52.64577pt too wide) in paragraph at lines 494--499
+[]\EU1/FandolSong-Regular(0)/m/n/10.95 键 盘 主 要 状 态 机 有 \T1/ppl/m/n/10.95 13 \EU
+1/FandolSong-Regular(0)/m/n/10.95 个 状 态，|  分 别 为 \T1/ppl/m/n/10.95 de-lay,start
+,d0,d1,d2,d3,d4,d5,d6,d7,parity,stop,finish\EU1/FandolSong-Regular(0)/m/n/10.95
+ ，|
+ []
+
+[17]
+File: Figures/keyboard.png Graphic file (type QTm)
+ <use  "Figures/keyboard.png" > [18] [19]) [20]
+\openout2 = `Chapters/Chapter4.aux'.
+
+ (./Chapters/Chapter4.tex
+Chapter 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 58.
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 58.
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <7> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 58.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 58.
+
+1: section
+[21
+
+
+
+] [22] [23]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 232.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 232.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 232.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 232.
+
+
+Overfull \hbox (0.67111pt too wide) in paragraph at lines 276--276
+ []|\T1/ppl/m/n/10 OUT$[]$MEMTOREG| 
+ []
+
+
+Overfull \hbox (4.77112pt too wide) in paragraph at lines 292--292
+ []|\T1/ppl/m/n/10 OUT$[]$EXTENDIMM| 
+ []
+
+
+Overfull \hbox (1.55069pt too wide) in paragraph at lines 294--294
+ []|\T1/ppl/m/n/10 OUT$[]$TARGETREG| 
+ []
+
+[24] [25]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 358.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 358.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 358.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 358.
+
+
+Overfull \hbox (0.67111pt too wide) in paragraph at lines 386--386
+ []|\T1/ppl/m/n/10 OUT$[]$MEMTOREG| 
+ []
+
+
+Overfull \hbox (1.55069pt too wide) in paragraph at lines 396--396
+ []|\T1/ppl/m/n/10 OUT$[]$TARGETREG| 
+ []
+
+[26] [27]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 475.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 475.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 475.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 475.
+
+
+Overfull \hbox (1.55069pt too wide) in paragraph at lines 503--503
+ []|\T1/ppl/m/n/10 OUT$[]$TARGETREG| 
+ []
+
+[28] [29] [30] [31]) [32]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
-\g__fontspec_family_FandolFang-Regular_int=\count341
+\g__fontspec_family_FandolFang-Regular_int=\count334
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 184.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -2325,13 +2412,13 @@ de Lasers for Atomic Physics ^^Q.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
 1: section
-[14
+[33
 
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
  (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
-(./Chapters/Chapter3.aux))
+(./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 188.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 188.
 
@@ -2339,19 +2426,23 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 188.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40337 strings out of 493706
- 866041 string characters out of 6145768
- 987123 words of memory out of 5000000
- 43244 multiletter control sequences out of 15000+600000
- 34091 words of font info for 79 fonts, out of 8000000 for 9000
+ 39690 strings out of 493706
+ 858270 string characters out of 6145768
+ 972458 words of memory out of 5000000
+ 42598 multiletter control sequences out of 15000+600000
+ 38551 words of font info for 91 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 63i,20n,91p,10377b,2249s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,20n,90p,10377b,1821s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (18 pages).
+Output written on main.pdf (36 pages).

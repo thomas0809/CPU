@@ -1,0 +1,718 @@
+% Chapter Template
+
+\chapter{模块划分与接口设计} % Main chapter title
+
+\label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{IFetch}
+RAM2读写指令模块，时序逻辑。同时根据输入PC和暂停流水线信号输出下一条顺序执行指令的PC值。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{IFetch Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 功能 \\
+\hline
+clk & in & \\
+\hline
+Ram2Addr & out & 0000 \\
+\hline
+Ram2Data & inout & \\
+\hline
+PC & in & \\
+\hline
+PCInc & out & \\
+\hline
+IR & out & \\
+\hline
+PCStop & in & \\
+\hline
+IFWE & in & \\
+\hline
+IFData & in &  \\
+\hline
+IFAddr & in & \\
+\hline
+Ram2EN & out & \\
+\hline
+Ram2WE & out & \\
+\hline
+Ram2OE & out & \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{IF$\_$ID$\_$REGISTER}
+
+IF$\_$ID段间锁存器，时序逻辑。除了传递信号外，还需处理中断，通过硬件方式保存现场并跳到中断处理程序。另外，还需要根据Forward Unit模块产生的插气泡信号和MEM产生的写RAM2信号进行停止流水线操作。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{IF$\_$ID$\_$REGISTER Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+clk & in & 时钟信号 \\
+\hline
+INPC & in & 输入PC值 \\
+\hline
+INIR & inout & 输入指令值 \\
+\hline
+INTERRUPT & in & 中断信号，包括四种中断 \\
+\hline
+IFIDSTOP & in & 插入气泡信号 \\
+\hline
+IF$\_$FLUSH & in & 跳转指令清除延迟槽信号 \\
+\hline
+IF$\_$WRITE$\_$RAM2 & in & Ram2写指令，暂停流水线 \\
+\hline
+OUTPC & out & 输出PC值 \\
+\hline
+OUTIR & out &  输出指令值\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{controller}
+
+CPU控制器，组合逻辑。译码指令来产生控制信号。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{controller Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+INSTRUCTION & in & 需要译码的指令 \\
+\hline
+SRCREG1 & out & 第一个源寄存器编号 \\
+\hline
+SRCREG2 & out & 第二个源寄存器编号\\
+\hline
+TARGETREG & out & 目的寄存器编号 \\
+\hline
+EXTENDIMM & out & 扩展后的立即数 \\
+\hline
+ALUOP & out & ALU操作符 \\
+\hline
+ALUSRCA & out & ALU第一个操作数选择信号 \\
+\hline
+ALUSRCB & out & ALU第二个操作数选择信号 \\
+\hline
+MEMTOREG & out &  读内存信号 \\
+\hline
+REGWRITE & out & 写寄存器信号 \\
+\hline
+MEMWRITE & out & 写内存信号 \\
+\hline
+BRANCH & out & B型跳转信号 \\
+\hline
+JUMP & out & J型跳转信号 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{RegisterCluster}
+
+寄存器堆，存放各个寄存器的值，用于读写寄存器。写寄存器为时序逻辑，读寄存器为组合逻辑。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{RegisterCluster Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+clk & in & 时钟信号 \\
+\hline
+rst & in & 复位信号 \\
+\hline
+SRCREG1 & in & 输入第一个源寄存器编号 \\
+\hline
+SRCREG2 & in & 输入第二个源寄存器编号 \\
+\hline
+TARGETREG & in & 输入目的寄存器编号 \\
+\hline
+REGWRITE & in & 寄存器写使能 \\
+\hline
+WRITEDATA & in & 写回数据 \\
+\hline
+REGDATA1 & out & 输出第一个源寄存器值 \\
+\hline
+REGDATA2 & out &  输出第二个源寄存器值\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{PC}
+
+计算下一周期PC值的模块，组合逻辑。根据跳转信号选择下一周期的跳转地址。为了兼顾B指令、J指令的各种情况，输入多个可能的跳转地址，包括旁路信号。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{PC Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+CURRENTPC & in & 当前PC \\
+\hline
+LASTPC & in & 上一周期的PC \\
+\hline
+EXTENDIMM & in & B指令的偏移值 \\
+\hline
+BRANCH & in & B指令跳转类型 \\
+\hline
+JUMP & in & J指令跳转 \\
+\hline
+REG1data & in & 寄存器值，对B指令可用于判断是否跳转，对J指令指定跳转地址 \\
+\hline
+ALURES1 & in & ALU阶段旁路值 \\
+\hline
+ALURES2 & in & MEM阶段保存的ALU结果 \\
+\hline
+MEMDATA & in &  MEM阶段读取的内存值 \\
+\hline
+FORWARD & in & 数据冲突信号 \\
+\hline
+NEXTPC & out & 下一指令PC值 \\
+\hline
+IF$\_$FLUSH & out & 清除延迟槽信号 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+\section{ID$\_$EX$\_$REGISTER}
+
+ID$\_$EXE段间锁存器，时序逻辑。传递信号，还需根据FORWARD UNIT模块的插气泡信号暂停流水线。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{ID$\_$EX$\_$REGISTER Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+clk & in & 时钟信号 \\
+\hline
+CONTROLSTOP & in & 暂停流水线信号 \\
+\hline
+IN$\_$MEMTOREG & in & 输入读内存信号 \\
+\hline
+IN$\_$REGWRITE & in & 输入写寄存器信号 \\
+\hline
+IN$\_$MEMWRITE & in & 输入写内存信号 \\
+\hline
+IN$\_$ALUSRCA & in & 输入ALU第一个操作数选择信号 \\
+\hline
+IN$\_$ALUSRCB & in & 输入ALU第二个操作数选择信号 \\
+\hline
+IN$\_$ALUOP & in & 输入ALU操作符 \\
+\hline
+IN$\_$FORWARDA & in & 输入数据旁路选择信号A \\
+\hline
+IN$\_$FORWARDB & in & 输入数据旁路选择信号B \\
+\hline
+IN$\_$EXTENDIMM & in & 输入扩展的立即数 \\
+\hline
+IN$\_$TARGETREG & in & 输入写回寄存器编号 \\
+\hline
+IN$\_$REGDATA1 & in & 输入第一个寄存器值 \\
+\hline
+IN$\_$REGDATA2 & in & 输入第二个寄存器值 \\
+\hline
+IN$\_$PC & in & 输入PC值 \\
+\hline
+OUT$\_$MEMTOREG & out & 输出读内存信号 \\
+\hline
+OUT$\_$REGWRITE & out & 输出写寄存器信号 \\
+\hline
+OUT$\_$MEMWRITE & out & 输出写内存信号 \\
+\hline
+OUT$\_$ALUSRCA & out & 输出ALU第一个操作数选择信号 \\
+\hline
+OUT$\_$ALUSRCB & out & 输出ALU第二个操作数选择信号 \\
+\hline
+OUT$\_$ALUOP & out & 输出ALU运算符  \\
+\hline
+OUT$\_$FORWARDA & out & 输出数据旁路选择信号A \\
+\hline
+OUT$\_$FORWARDB & out & 输出数据旁路选择信号B \\
+\hline
+OUT$\_$EXTENDIMM & out & 输出扩展的立即数 \\
+\hline
+OUT$\_$TARGETREG & out & 输出写回寄存器编号 \\
+\hline
+OUT$\_$REGDATA1 & out & 输出第一个寄存器值 \\
+\hline
+OUT$\_$REGDATA2 & out & 输出第二个寄存器值 \\
+\hline
+OUT$\_$PC & out & 输出PC值 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{ALU}
+
+ALU运算器，组合逻辑。用于EXE阶段进行运算。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{ALU Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+REGDATA1 & in & 第一个寄存器的值 \\
+\hline
+REGDATA2 & in & 第二个寄存器的值 \\
+\hline
+EXTENDIMM & in & 扩展的立即数 \\
+\hline
+LASTALU & in & 上一条指令ALU结果 \\
+\hline
+LASTMEM & in & 上两条指令MEM结果 \\
+\hline
+forwardA & in & 第一个运算数的数据冲突选择信号 \\
+\hline
+forwardB & in & 第二个运算数的数据冲突选择信号 \\
+\hline
+ALUSRCA & in & 第一个运算数的选择信号 \\
+\hline
+ALUSRCB & in &  第二个运算数的选择信号 \\
+\hline
+ALUOP & in & ALU运算符 \\
+\hline
+PC & in & PC值 \\
+\hline
+ALURES & out & ALU结果 \\
+\hline
+REGDATA & out & 选择的寄存器值，用于写到内存 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 8
+%----------------------------------------------------------------------------------------
+
+\section{EX$\_$MEM$\_$REGISTER}
+
+EXE$\_$MEM段间锁存器，时序逻辑。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{EX$\_$MEM$\_$REGISTER Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+clk & in & 时钟信号 \\
+\hline
+IN$\_$MEMTOREG & in & 输入读内存信号 \\
+\hline
+IN$\_$REGWRITE & in & 输入写寄存器信号 \\
+\hline
+IN$\_$MEMWRITE & in & 输入写内存信号 \\
+\hline
+IN$\_$ALURES & in & 输入ALU计算结果 \\
+\hline
+IN$\_$REGDATA & in & 输入MEM写入数据 \\
+\hline
+IN$\_$TARGETREG & in & 输入目的寄存器编号 \\
+\hline
+OUT$\_$MEMTOREG & out & 输出读内存信号 \\
+\hline
+OUT$\_$REGWRITE & out & 输出写寄存器信号 \\
+\hline
+OUT$\_$MEMWRITE & out & 输出写内存信号 \\
+\hline
+OUT$\_$ALURES & out & 输出ALU计算结果 \\
+\hline
+OUT$\_$REGDATA & out & 输出MEM写入数据 \\
+\hline
+OUT$\_$TARGETREG & out & 输出目的寄存器编号 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 9
+%----------------------------------------------------------------------------------------
+
+\section{MEM}
+
+Ram1读写内存，时序逻辑。此模块中还需根据读写地址判断是否为写入指令、读写串口、键盘vga读写等等。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{MEM Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+clk & in & \\
+\hline
+Ram1Data & inout & 第一个寄存器的值 \\
+\hline
+Ram1Addr & out & 第二个寄存器的值 \\
+\hline
+Ram1OE & out & 扩展的立即数 \\
+\hline
+Ram1WE & out & 上一条指令ALU结果 \\
+\hline
+Ram1EN & out & 上两条指令MEM结果 \\
+\hline
+data$\_$ready & in & 第一个运算数的数据冲突选择信号 \\
+\hline
+tbre & in & 第二个运算数的数据冲突选择信号 \\
+\hline
+tsre & in & 第一个运算数的选择信号 \\
+\hline
+rdn & out &  第二个运算数的选择信号 \\
+\hline
+wrn & out & ALU运算符 \\
+\hline
+uart$\_$data$\_$ready & in & PC值 \\
+\hline
+uart$\_$tbre & in & ALU结果 \\
+\hline
+uart$\_$tsre & in & 选择的寄存器值，用于写到内存 \\
+\hline
+uart$\_$rdn & out & \\
+\hline
+uart$\_$wrn & out & \\
+\hline
+MemData & in & \\
+\hline
+MemAddr & in & \\
+\hline
+MemWE & in & \\
+\hline
+MemRE & in & \\
+\hline
+IFWE & out & \\
+\hline 
+IFData & out & \\
+\hline
+IFAddr & out & \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 10
+%----------------------------------------------------------------------------------------
+
+\section{MEM$\_$WB$\_$REGISTER}
+
+MEM$\_$WE段间锁存器，时序逻辑。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{MEM$\_$WB$\_$REGISTER Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+clk & in & 时钟信号 \\
+\hline
+IN$\_$MEMTOREG & in & 输入内存数据写入寄存器信号 \\
+\hline
+IN$\_$REGWRITE & in & 输入写寄存器信号 \\
+\hline
+ALURES & in & 输入ALU计算结果 \\
+\hline
+IN$\_$TARGETREG & in & 输入目的寄存器编号 \\
+\hline
+READDATA & in & 内存读出的数据 \\
+\hline
+OUT$\_$REGWRITE & out & 输出写寄存器信号 \\
+\hline
+OUT$\_$TARGETREG & out & 输出目的寄存器编号 \\
+\hline
+WRITEDATA & out & 写回数据 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 11
+%----------------------------------------------------------------------------------------
+
+\section{FORFARD UNIT}
+
+数据冲突检测模块，组合逻辑。根据当前ID阶段指令的源寄存器编号与EXE、MEM阶段的目的寄存器编号是否相等及写回寄存器、读写内存等信号判断是否发生数据冲突及是否需要插气泡。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{MEM$\_$WB$\_$REGISTER Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+SRCREG1 & in & ID阶段源寄存器1编号 \\
+\hline
+SRCREG2 & in & ID阶段源寄存器2编号 \\
+\hline
+TARGETREGALU & in & ALU阶段目的寄存器编号 \\
+\hline
+TARGETREGMEM & in & MEM阶段目的寄存器编号 \\
+\hline
+REGWRITEALU & in & ALU阶段写回寄存器信号 \\
+\hline
+MEMTOREGALU & in & ALU阶段读内存信号 \\
+\hline
+REGWRITEMEM & in & MEM阶段写回寄存器信号 \\
+\hline
+MEMTOREGMEM & in & MEM阶段读内存信号 \\
+\hline
+FORWARDA & out & 当前指令ALU操作数1数据冲突选择信号 \\
+\hline
+FORWARDB & out & 当前指令ALU操作数2数据冲突选择信号\\
+\hline
+FORWARD & out & 当前指令跳转时数据冲突选择信号\\
+\hline
+PCSTOP & out & 插入气泡\\
+\hline
+IFIDSTOP & out & 插入气泡\\
+\hline
+CONTROLSTOP & out & 插入气泡\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 12
+%----------------------------------------------------------------------------------------
+
+\section{keyboard}
+
+用于键盘读入，通过状态机来接收通码、断码，并做奇偶校验。将得到的键盘输入输出到keyboardCpuRam模块进行处理。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{keyboard Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+datain & in & 键盘输入数据 \\
+\hline
+clkin & in & 键盘时钟 \\
+\hline
+fclk & in & 50M时钟 \\
+\hline
+interrupt & out & ESC中断信号 \\
+\hline
+interruptC & out & Control C中断信号 \\
+\hline
+keyboard$\_$out & out & 键盘输入结束信号 \\
+\hline
+shiftstate & out & shift组合键 \\
+\hline
+ctrlstate & out & ctrl组合键\\
+\hline
+word & out & 键盘数据\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 13
+%----------------------------------------------------------------------------------------
+
+\section{keyboardCpuRam}
+
+模拟term程序的输入部分，通过键盘的摁键设置状态机，实现A、G、U、D、R五条term程序指令，并发送给CPU模块。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{keyboardCpuRam Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+clk50 & in & 50M时钟 \\
+\hline
+KeyBoardData & in & 键盘输入到状态机的数据 \\
+\hline
+DataReady & in & 键盘输入至状态机的通知 \\
+\hline
+CpuDataReady & out & 状态机输入到主机 \\
+\hline
+DataPath & inout & 数据总线 \\
+\hline
+CpuRdn & in & 主机给状态机读信号 \\
+\hline
+CpuEnable & in & 主机给状态机是否能写\\
+\hline
+RamData & out & 将acsii字符写入ram，用于VGA显示\\
+\hline
+RamDataReady & out & dataready给ram \\
+\hline
+RamRdn & in & ram给状态机的通知 \\
+\hline
+ shiftstat & in & shift组合键信号 \\
+ \hline
+ ctrlstate & in & ctrl组合键信号 \\
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 14
+%----------------------------------------------------------------------------------------
+
+\section{keyboardstatemachine}
+
+键盘输入部分的top模块。用于与CPU和VGA进行通信，同时访问底层keyboard模块数据，保证数据的正确性。
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{keyboardstatemachine Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+datain & in & 键盘输入数据 \\
+\hline
+clkin & in & 键盘时钟 \\
+\hline
+fclk & in & 50M时钟 \\
+\hline
+interrupt & out & ESC中断信号 \\
+\hline
+interruptC & out & Control C中断信号 \\
+\hline
+rdn & in & 主机给状态机的读信号 \\
+\hline
+CpuDataReady & out & 键盘给主机可读信号 \\
+\hline
+showData & inout & 键盘给CPU的数据 \\
+\hline
+KBData & out & 键盘给VGA的数据\\
+\hline
+KBdata$\_$ready & out & 键盘给VGA可读信号\\
+\hline
+KBrdn & in & VGA给键盘读使能 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 15
+%----------------------------------------------------------------------------------------
+
+\section{compiler}
+
+汇编代码转为机器码的模块。当term执行A指令时，用户可以输入汇编码，键盘模块将整句的汇编码保存在缓冲区中，等待回车到来后将输入的汇编码转为机器码，并发送到CPU以写入RAM2.
+
+\begin{table}[H]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\caption{compiler Interface}
+\label{tab:treatments}
+\begin{tabular}{|p{3cm}<{\centering}|p{1.4cm}<{\centering}|p{7cm}<{\centering}|}
+\hline
+接口名称 & 类型 & 说明 \\
+\hline
+sendbuffer & in & 输入指令缓冲区 \\
+\hline
+instruc & out & 16位指令机器码表示 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
