@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.29)  11 DEC 2015 11:00
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.9.21)  11 DEC 2015 14:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,8 +549,14 @@ Package scrlayer-scrpage Info: auto-selection of `pagestyleset=standard'.
 . Defining environment 'acknowledgements' with sig. '' on line 387.
 .................................................
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/ctex.sty
-Package: ctex 2015/05/16 v2.0.2 Chinese adapter in LaTeX (CTEX)
+Package: ctex 2015/07/01 v2.2 Chinese adapter in LaTeX (CTEX)
 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/ctexhook.sty
+Package: ctexhook 2015/07/01 v2.2 Document and package hooks (CTEX)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/ctexpatch.sty
+Package: ctexpatch 2015/07/01 v2.2 Patching commands (CTEX)
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
 
@@ -565,26 +571,26 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 \l__ctex_tmp_box=\box52
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
-File: ctexopts.cfg 2015/05/16 v2.0.2 Option configuration file (CTEX)
+File: ctexopts.cfg 2015/07/01 v2.2 Option configuration file (CTEX)
 )
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \ctexset with sig. '+m' on line 452.
+. Defining command \ctexset with sig. '' on line 359.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \CTEXsetup with sig. '+o>{\TrimSpaces }m' on line 458.
+. Defining command \CTEXsetup with sig. '+o>{\TrimSpaces }m' on line 365.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \CTEXoptions with sig. '+o' on line 464.
+. Defining command \CTEXoptions with sig. '+o' on line 371.
 .................................................
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
-File: ctex-engine-xetex.def 2015/05/16 v2.0.2 XeLaTeX adapter (CTEX)
+File: ctex-engine-xetex.def 2015/07/01 v2.2 XeLaTeX adapter (CTEX)
 (/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 Package: xeCJK 2015/05/15 v3.3.2 Typesetting CJK scripts with XeLaTeX
 
@@ -1307,23 +1313,23 @@ Package: CJKfntef 2015/04/18 4.8.4
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \CTEXsetfont with sig. '' on line 503.
+. Defining command \CTEXsetfont with sig. '' on line 409.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \ziju with sig. 'm' on line 575.
+. Defining command \ziju with sig. 'm' on line 481.
 .................................................
 \l__ctex_ziju_dim=\dimen216
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \CTEXindent with sig. '' on line 616.
+. Defining command \CTEXindent with sig. '' on line 522.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \CTEXnoindent with sig. '' on line 622.
+. Defining command \CTEXnoindent with sig. '' on line 528.
 .................................................
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/zhnumber/zhnumber.sty
@@ -1382,50 +1388,61 @@ File: zhnumber-utf8.cfg 2014/09/13 v2.1 Chinese numerals with UTF8 encoding
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \CTEXnumber with sig. 'mm' on line 629.
+. Defining command \CTEXnumber with sig. 'mm' on line 543.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \CTEXdigits with sig. 'mm' on line 631.
+. Defining command \CTEXdigits with sig. 'mm' on line 545.
 .................................................
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-plain.def
-File: ctex-scheme-plain.def 2015/05/16 v2.0.2 Plain scheme for generic (CTEX)
+File: ctex-scheme-plain.def 2015/07/01 v2.2 Plain scheme for generic (CTEX)
 )
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \zihao with sig. 'm' on line 708.
+. Defining command \zihao with sig. 'm' on line 624.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \CTeX with sig. '' on line 812.
+. Defining command \CTeX with sig. '' on line 728.
 .................................................
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.
-def
-File: ctex-fontset-fandol.def 2015/05/16 v2.0.2 Fandol fonts definition (CTEX)
-
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-mac.def
+File: ctex-fontset-mac.def 2015/07/01 v2.2 Mac OS X fonts definition (CTEX)
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
-* Font 'FandolSong-Regular' does not contain script 'CJK'.
+* Font 'STSong' does not contain script 'CJK'.
 *************************************************
-\g__fontspec_family_FandolSong-Regular_int=\count165
+\g__fontspec_family_STSong_int=\count165
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font STKaiti/B (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font STHeiti/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font STSong/BI (it probably doesn't exist).
+.................................................
 .................................................
 . fontspec info: "defining-font"
 . 
-. Font family 'FandolSong-Regular(0)' created for font 'FandolSong-Regular'
-. with options
-. [Script={CJK},Extension={.otf},BoldFont={FandolSong-Bold},ItalicFont={FandolK
-ai-Regular}].
+. Font family 'STSong(0)' created for font 'STSong' with options
+. [Script={CJK},BoldFont={STHeiti},ItalicFont={STKaiti}].
 . 
 . This font family consists of the following shapes:
 . 
 . * 'normal' with NFSS spec.:
-. <->"[FandolSong-Regular.otf]/OT:"
+. <->"STSong/OT:"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1433,7 +1450,7 @@ ai-Regular}].
 . 
 . 
 . * 'bold' with NFSS spec.:
-. <->"[FandolSong-Bold.otf]/OT:"
+. <->"STHeiti/OT:"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1441,7 +1458,7 @@ ai-Regular}].
 . 
 . 
 . * 'italic' with NFSS spec.:
-. <->"[FandolKai-Regular.otf]/OT:"
+. <->"STKaiti/OT:"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1451,25 +1468,25 @@ ai-Regular}].
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \songti with sig. '' on line 97.
+. Defining command \songti with sig. '' on line 44.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \heiti with sig. '' on line 98.
+. Defining command \heiti with sig. '' on line 45.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \fangsong with sig. '' on line 99.
+. Defining command \fangsong with sig. '' on line 46.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \kaishu with sig. '' on line 100.
+. Defining command \kaishu with sig. '' on line 47.
 .................................................
 )) (/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/config/ctex.cfg
-File: ctex.cfg 2015/05/16 v2.0.2 Configuration file (CTEX)
+File: ctex.cfg 2015/07/01 v2.2 Configuration file (CTEX)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -1751,7 +1768,6 @@ File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
 Package hyperref Info: Option `unicode' set `true' on input line 4319.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/puenc.def
@@ -1774,7 +1790,7 @@ Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
 Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring ON on input line 6313.
+Package hyperref Info: Link coloring OFF on input line 6315.
 Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
@@ -2185,9 +2201,8 @@ LaTeX Font Warning: Font shape `EU1/pcr/m/n' undefined
 File: Figures/thu.png Graphic file (type QTm)
 <use  "Figures/thu.png" >
 
-LaTeX Font Warning: Font shape `EU1/FandolSong-Regular(0)/m/sc' undefined
-(Font)              using `EU1/FandolSong-Regular(0)/m/n' instead on input line
- 110.
+LaTeX Font Warning: Font shape `EU1/STSong(0)/m/sc' undefined
+(Font)              using `EU1/STSong(0)/m/n' instead on input line 110.
 
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 114.
@@ -2208,7 +2223,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 158.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 164.
  (./main.toc
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 4.
@@ -2252,17 +2267,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 ]
-Overfull \hbox (7.5856pt too wide) in paragraph at lines 49--50
-\EU1/FandolSong-Regular(0)/m/n/10.95 为 主 要 存 储 器，|  采 用 的 是 \T1/ppl/m/n/10.95 I
-SSI \EU1/FandolSong-Regular(0)/m/n/10.95 公 司 生 产 的 异 步 高 速 \T1/ppl/m/n/10.95 CM
-OS SRAM\EU1/FandolSong-Regular(0)/m/n/10.95 ，|  型 号 为 \T1/ppl/m/n/10.95 IS61LV2
-5616-
+Overfull \hbox (1.03752pt too wide) in paragraph at lines 49--50
+\EU1/STSong(0)/m/n/10.95 主 要 存 储 器，|  采 用 的 是 \T1/ppl/m/n/10.95 ISSI \EU1/STSon
+g(0)/m/n/10.95 公 司 生 产 的 异 步 高 速 \T1/ppl/m/n/10.95 CMOS SRAM\EU1/STSong(0)/m/n/
+10.95 ，|  型 号 为 \T1/ppl/m/n/10.95 IS61LV25616-
  []
 
-LaTeX Font Info:    Font shape `EU1/FandolSong-Regular(0)/m/sl' in size <10.95>
- not available
-(Font)              Font shape `EU1/FandolSong-Regular(0)/m/it' tried instead o
-n input line 77.
+LaTeX Font Info:    Font shape `EU1/STSong(0)/m/sl' in size <10.95> not availab
+le
+(Font)              Font shape `EU1/STSong(0)/m/it' tried instead on input line
+ 77.
 [3]) [4]
 \openout2 = `Chapters/Chapter3.aux'.
 
@@ -2470,32 +2484,32 @@ File: Figures/picture/IMG_7232.JPG Graphic file (type QTm)
  <use  "Figures/picture/IMG_7232.JPG" >
 File: Figures/picture/IMG_7233.JPG Graphic file (type QTm)
 
-<use  "Figures/picture/IMG_7233.JPG" > [38]
+<use  "Figures/picture/IMG_7233.JPG" >
 File: Figures/picture/IMG_7235.JPG Graphic file (type QTm)
-
-<use  "Figures/picture/IMG_7235.JPG" >
+ <use  "Figures/picture/IMG_7235.JPG" >
+[38]
 File: Figures/picture/IMG_7236.JPG Graphic file (type QTm)
  <use  "Figures/picture/IMG_7236.JPG" >
-[39]
 File: Figures/picture/vlcsnap-2015-12-09-23h47m55s801.png Graphic file (type QT
 m)
- <use  "Figures/picture/vlcsnap-2015-12-09-23h47m55s801.png" > [40]
+
+<use  "Figures/picture/vlcsnap-2015-12-09-23h47m55s801.png" > [39]
 File: Figures/picture/vlcsnap-2015-12-09-23h48m01s993.png Graphic file (type QT
 m)
 
-<use  "Figures/picture/vlcsnap-2015-12-09-23h48m01s993.png" > [41]
+<use  "Figures/picture/vlcsnap-2015-12-09-23h48m01s993.png" >
 File: Figures/picture/vlcsnap-2015-12-09-23h48m27s710.png Graphic file (type QT
 m)
 
-<use  "Figures/picture/vlcsnap-2015-12-09-23h48m27s710.png" >
+<use  "Figures/picture/vlcsnap-2015-12-09-23h48m27s710.png" > [40]
 File: Figures/picture/vlcsnap-2015-12-10-00h17m16s488.png Graphic file (type QT
 m)
 
-<use  "Figures/picture/vlcsnap-2015-12-10-00h17m16s488.png" > [42]
+<use  "Figures/picture/vlcsnap-2015-12-10-00h17m16s488.png" >
 File: Figures/picture/vlcsnap-2015-12-10-00h17m47s086.png Graphic file (type QT
 m)
 
-<use  "Figures/picture/vlcsnap-2015-12-10-00h17m47s086.png" > [43]
+<use  "Figures/picture/vlcsnap-2015-12-10-00h17m47s086.png" > [41]
 File: Figures/picture/vlcsnap-2015-12-10-00h18m07s281.png Graphic file (type QT
 m)
 
@@ -2503,82 +2517,37 @@ m)
 File: Figures/picture/vlcsnap-2015-12-10-00h18m33s048.png Graphic file (type QT
 m)
 
-<use  "Figures/picture/vlcsnap-2015-12-10-00h18m33s048.png" > [44]
+<use  "Figures/picture/vlcsnap-2015-12-10-00h18m33s048.png" > [42]
 File: Figures/picture/vlcsnap-2015-12-10-00h18m41s120.png Graphic file (type QT
 m)
 
-<use  "Figures/picture/vlcsnap-2015-12-10-00h18m41s120.png" > [45]
+<use  "Figures/picture/vlcsnap-2015-12-10-00h18m41s120.png" >
 File: Figures/picture/vlcsnap-2015-12-10-00h19m17s659.png Graphic file (type QT
 m)
 
-<use  "Figures/picture/vlcsnap-2015-12-10-00h19m17s659.png" > [46]
+<use  "Figures/picture/vlcsnap-2015-12-10-00h19m17s659.png" > [43]
 File: Figures/picture/vlcsnap-2015-12-10-00h19m57s104.png Graphic file (type QT
 m)
 
-<use  "Figures/picture/vlcsnap-2015-12-10-00h19m57s104.png" > [47]) [48]
+<use  "Figures/picture/vlcsnap-2015-12-10-00h19m57s104.png" >) [44]
 \openout2 = `Chapters/Chapter6.aux'.
 
 
 (./Chapters/Chapter6.tex
 Chapter 6.
 1: section
-[49
+[45
 
 
 
-] [50] [51]) [52]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'FandolFang-Regular' does not contain script 'CJK'.
-*************************************************
-\g__fontspec_family_FandolFang-Regular_int=\count334
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 187.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'FandolFang-Regular(0)' created for font 'FandolFang-Regular'
-. with options [Script={CJK},Extension={.otf},AutoFakeBold={4}].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"[FandolFang-Regular.otf]/OT:"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold' with NFSS spec.:
-. <->"[FandolFang-Regular.otf]/OT:embolden=4;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-.................................................
-
-Overfull \hbox (0.44162pt too wide) in paragraph at lines 187--187
-[][]\T1/ppl/m/n/10.95 Wieman, Carl E. and Leo Holl-berg (1991). ^^P  Us-ing Dio
-de Lasers for Atomic Physics ^^Q.
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
-1: section
-[53
-
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
- (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
-(./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux)
-(./Chapters/Chapter6.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 191.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 191.
+] [46] [47] [48]) [49]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
+ (./main.aux (./Chapters/Chapter1.aux)
+(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux)
+(./Chapters/Chapter5.aux) (./Chapters/Chapter6.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 197.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2591,12 +2560,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39844 strings out of 493706
- 862391 string characters out of 6145768
- 972458 words of memory out of 5000000
- 42699 multiletter control sequences out of 15000+600000
- 38551 words of font info for 91 fonts, out of 8000000 for 9000
+ 39744 strings out of 493706
+ 857805 string characters out of 6145769
+ 972585 words of memory out of 5000000
+ 42599 multiletter control sequences out of 15000+600000
+ 37300 words of font info for 85 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 63i,20n,91p,10377b,2252s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,20n,91p,10377b,2249s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (59 pages).
+Output written on main.pdf (55 pages).

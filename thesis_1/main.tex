@@ -147,7 +147,13 @@ headsepline, % Uncomment to get a line under the header
 \renewcommand{\abstractname}{摘要}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
 
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+本报告是作者对清华大学2015—2016学年《计算机组成原理》课程实验的实验报告。
+
+此次实验，我们设计和实现了一台16位计算机。CPU采用5段流水线结构设计，并应用旁路技术等手段处理流水线冲突。内存储器使用两块SRAM，分别作为指令存储器和数据存储器。外存储器使用Flash，装载系统程序用于开机启动。
+
+我们实现了一些扩展功能，包括使用PS2键盘输入和显示屏VGA输出，实现了汇编和反汇编的功能，并加入一个屏幕保护界面。另外，我们用分时操作的方式实现了多道程序功能，即同时运行两套监控程序，一套与PC端终端程序交互，一套与键盘VGA交互。
+
+本报告介绍了我们实验的设计和实现细节，具体的章节内容请见目录和正文。
 
 \end{abstract}
 
@@ -184,7 +190,7 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\printbibliography[heading=bibintoc]
+% \printbibliography[heading=bibintoc]
 
 %----------------------------------------------------------------------------------------
 
